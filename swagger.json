@@ -1,17 +1,5 @@
-swagger: "2.0"
-info:
-  description: "This is a dEMO for api document"
-  version: "1.0.0"
-  title: "i.service"
+swagger: "2.0"  
 
-  
-  contact:
-    email: "bbpatel1411@gmail.com"
-  
-  license:
-    name: "Apache 2.0"
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-  
   
 host: "reqres.in"
 

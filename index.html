@@ -3,10 +3,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Swagger UI</title>
+    <title>iService</title>
     <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
-    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="./favicon-32x32.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.ico" sizes="16x16" />
     <style>
       html
       {
@@ -52,7 +52,14 @@
         ],
         layout: "StandaloneLayout"
       })
-
+	
+		//document.getElementsByClassName('topbar-wrapper')[0].getElementsByTagName('img')[0].src = "./favicon-32x32.ico";
+		// Hiding icon 
+		document.getElementsByClassName('topbar-wrapper')[0].getElementsByTagName('img')[0].setAttribute("style","display: none")
+		document.getElementsByClassName('topbar-wrapper')[0].getElementsByTagName('span')[0].innerText = "iService Open API"
+		
+		// Hiding explore form
+		document.getElementsByClassName('download-url-wrapper')[0].setAttribute("style","display: none")
       window.ui = ui
     }
   </script>
