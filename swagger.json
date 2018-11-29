@@ -2,7 +2,7 @@ swagger: "2.0"
 info:
   version: 0.0.0
   title: iService api
-  
+
 
 host: "qa.iservicecrm.com"
 
@@ -10,48 +10,54 @@ basePath: "/f"
 
 schemes:
 - "https"
-- "http"
 paths:
-  /webapp-api-login:
-    post: 
-      tags: 
-      - "Login" 
-      summary: "Login to the system" 
-      description: "Api to login to iService System. User needs to be logged in to successfully execute all the api" 
-      operationId: "WebApilogin" 
+  /webapp-api-login?api=login:
+    post:
+      tags:
+      - "Login API"
+      summary: "Login to iService"
+      description: "Authenticates to an iService tenant and returns details of the authenticated user"
+      operationId: "Login"
       consumes:
-      - "application/x-www-form-urlencoded"
-      produces: 
-      - "application/json" 
-      - "application/xml" 
-      
-      parameters: 
-      - name: "api" 
-        in: "query" 
-        description: "The user name for login" 
-        required: true 
-        type: "string" 
-        default: "login" 
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+
+      parameters:
       - name: "emailAddress"
         in: "formData"
-        description: "Login name for the iService user.  "
-        required: false
+        description: "Login name for the iService user. This does NOT need to be an email address."
+        required: true
         type: "string"
       - name: "password"
         in: "formData"
         description: "Password for the iService user."
-        required: false
+        required: true
         type: "string"
       responses:
-        200:
+        '200':
           description: "successful operation"
-        400:
+        '400':
           description: "Invalid username/password supplied"
-  
-  
+
+  /webapp-api-login?api=logout:
+    post:
+      tags:
+      - "Login API"
+      summary: "Logout of iService"
+      description: "Closes a user session from iService"
+      operationId: "Logout"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+
+      parameters:
+      responses:
+        '200':
+          description: "successful operation"
 
 definitions:
-  
   User:
     type: "object"
     properties:
@@ -75,5 +81,3 @@ definitions:
       password:
         type: "string"
         description: "Password for the iService user."
-
- 
