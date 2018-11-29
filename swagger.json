@@ -188,6 +188,24 @@ paths:
         '200':
           description: "successful operation"
 
+  /webapp-api-custinfo-summary-data:
+    get:
+      tags:
+      - "Customer Summary API"
+      summary: "summary Data"
+      description: |
+        Returns Single customer Summary Data.
+      operationId: "Customer summary Data"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+
+      parameters:
+      responses:
+        '200':
+          description: "successful operation"
+
 definitions:
   User:
     type: "object"
