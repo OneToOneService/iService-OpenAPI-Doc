@@ -57,6 +57,137 @@ paths:
         '200':
           description: "successful operation"
 
+  /webapp-api-history?api=details&interactionID={{interactionID}}:
+    get:
+      tags:
+      - "History API"
+      summary: "Details"
+      description: |
+        Returns full details of a single interaction, including:
+          * General content such as subject, body, attachments, etc
+          * Property and Case values
+          * Status audit log
+          * Associated contacts/agents
+      operationId: "History Detail"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+
+      parameters:
+      - name: "interactionID"
+        in: "path"
+        description: "ID of Interaction to fetch details"
+        required: true
+        type: "integer"
+      responses:
+        '200':
+          description: "successful operation"
+
+  /webapp-api-history?api=threads&contactID={{contactID}}:
+    get:
+      tags:
+      - "History API"
+      summary: "Threads"
+      description: |
+        Returns History Threads details of a single interaction
+      operationId: "History Threads"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+
+      parameters:
+      - name: "contactID"
+        in: "path"
+        description: "ID of contact to fetch details"
+        required: true
+        type: "integer"
+      responses:
+        '200':
+          description: "successful operation"
+
+  /webapp-api-history?api=children&threadID={{threadID}}:
+    get:
+      tags:
+      - "History API"
+      summary: "Children"
+      description: |
+        Returns full details of a single interaction, including:
+          * General content such as subject, body, attachments, etc
+          * Property and Case values
+          * Status audit log
+          * Associated contacts/agents
+      operationId: "History Children"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+
+      parameters:
+      - name: "threadID"
+        in: "path"
+        description: "ID of Interaction to pull details for"
+        required: true
+        type: "integer"
+      responses:
+        '200':
+          description: "successful operation"
+
+  /webapp-api-history?api=propertyset&interactionID={{interactionID}}:
+    get:
+      tags:
+      - "History API"
+      summary: "Propertyset"
+      description: |
+        Returns full details of a single interaction, including:
+          * General content such as subject, body, attachments, etc
+          * Property and Case values
+          * Status audit log
+          * Associated contacts/agents
+      operationId: "History Propertyset"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+
+      parameters:
+      - name: "interactionID"
+        in: "path"
+        description: "ID of Interaction to fetch details"
+        required: true
+        type: "integer"
+      responses:
+        '200':
+          description: "successful operation"
+
+  /webapp-api-history?api=startagentemail&interactionID={{interactionID}}:
+    get:
+      tags:
+      - "History API"
+      summary: "startagentemail"
+      description: |
+        Returns full details of a single interaction, including:
+          * General content such as subject, body, attachments, etc
+          * Property and Case values
+          * Status audit log
+          * Associated contacts/agents
+      operationId: "History Startagentemail"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+
+      parameters:
+      - name: "interactionID"
+        in: "path"
+        description: "ID of Interaction to fetch details"
+        required: true
+        type: "integer"
+      responses:
+        '200':
+          description: "successful operation"
+
 definitions:
   User:
     type: "object"
